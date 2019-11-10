@@ -1,1 +1,1 @@
-# R-non-parametric-test-tools
+# R-statistics-snipets
