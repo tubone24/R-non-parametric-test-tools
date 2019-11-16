@@ -1,6 +1,4 @@
-siegel_tukey <- function(x, y,
-    rnd = -1, alternative = "two.sided", mu = 0, paired = FALSE, 
-    exact = FALSE, correct = TRUE, conf.int = FALSE, conf.level = 0.95) {
+siegel_tukey <- function(x, y) {
     
     data = data.frame(x, y)
     names(data) = c("x", "y")
@@ -57,7 +55,7 @@ siegel_tukey <- function(x, y,
     cat("\n", "Mean rank of group 0: ", mean(ranks0), "\n", sep = "")
     cat("Mean rank of group 1: ", mean(ranks1), "\n", sep = "")
     
-    print(wilcox.test(ranks0, ranks1, alternative = alternative, 
-        mu = mu, paired = paired, exact = exact, correct = correct, 
-        conf.int = conf.int, conf.level = conf.level))
+    print(wilcox.test(ranks0, ranks1, alternative = "two.sided", 
+        mu = 0, paired = FALSE, exact = FALSE, correct = TRUE, 
+        conf.int = FALSE, conf.level = 0.95))
 } 
